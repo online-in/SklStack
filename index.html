@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.85);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .glass-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Profile image pulse */
+        .avatar-ring {
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+        .avatar-ring:hover {
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+
+    <!-- Main Container -->
+    <main class="w-full max-w-md mx-auto relative z-10">
+        
+        <!-- Glass Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 w-full text-center">
+            
+            <!-- Share Button (Top Right) -->
+            <button onclick="copyPageUrl()" class="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors" title="Copy Link">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+            </button>
+            <div id="toast" class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs py-1 px-3 rounded-full opacity-0 transition-opacity duration-300 pointer-events-none">
+                Link copied!
+            </div>
+
+            <!-- Profile Section -->
+            <div class="mb-6 flex flex-col items-center">
+                <div class="relative mb-4 group">
+                    <!-- Placeholder Logo/Image -->
+                    <img src="Sklstack Profile.png" 
+                         alt="Profile Logo" 
+                         class="w-24 h-24 rounded-full object-cover avatar-ring cursor-pointer bg-gray-100">
+                    <div class="absolute bottom-0 right-0 bg-blue-500 text-white p-1.5 rounded-full border-4 border-white/20" title="Verified">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="text-2xl font-bold text-white drop-shadow-md mb-1">Skl Stack</h1>
+                <p class="text-white/90 text-sm font-medium">Sharing the best vibes & content daily for Skill development ✨</p>
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="flex justify-center gap-4 mb-8">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/sklstack/" class="group relative">
+                    <div class="bg-white/90 p-3 rounded-full shadow-lg transform transition-transform group-hover:-translate-y-1 group-hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-600">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <span class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Insta</span>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@SklStack" class="group relative">
+                    <div class="bg-white/90 p-3 rounded-full shadow-lg transform transition-transform group-hover:-translate-y-1 group-hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+                        </svg>
+                    </div>
+                    <span class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">YouTube</span>
+                </a>
+                
+                <!-- Email/Contact -->
+                <a href="sklstackofficial@gmail.com" class="group relative">
+                     <div class="bg-white/90 p-3 rounded-full shadow-lg transform transition-transform group-hover:-translate-y-1 group-hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Links Stack -->
+            <div class="space-y-4">
+                
+                <!-- Featured Link -->
+                <a href="https://youtu.be/AX79EThp0Ww" class="block group">
+                    <div class="glass-btn p-1 rounded-xl relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="bg-white/90 rounded-lg p-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-red-100 p-2 rounded-lg text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div class="text-left">
+                                    <h3 class="font-bold text-gray-800">Portfolio Creation</h3>
+                                    <p class="text-xs text-gray-500">Watch How to create portfolio using AI within 5 Minuts</p>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-gray-600 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Standard Link 1 -->
+                <a href="https://sklstack.vercel.app/" class="block group">
+                    <div class="glass-btn rounded-xl p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                             <div class="bg-blue-100 p-2 rounded-lg text-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-semibold text-gray-800">Visit My Website</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Standard Link 2 -->
+                <a href="#" class="block group">
+                    <div class="glass-btn rounded-xl p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                             <div class="bg-green-100 p-2 rounded-lg text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                            </div>
+                            <span class="font-semibold text-gray-800">Merch Store</span>
+                        </div>
+                    </div>
+                </a>
+                
+                 <!-- Standard Link 3 -->
+                <a href="https://chroma-taupe.vercel.app/" class="block group">
+                    <div class="glass-btn rounded-xl p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                             <div class="bg-purple-100 p-2 rounded-lg text-purple-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <span class="font-semibold text-gray-800">My Portfolio</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-8 text-white/70 text-xs">
+                <p>&copy; 2024 Creative Brand. All rights reserved.</p>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        // Copy to clipboard functionality
+        function copyPageUrl() {
+            const url = window.location.href;
+            
+            // Create a temporary input to copy from
+            const tempInput = document.createElement('input');
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy'); // Fallback for better compatibility
+            document.body.removeChild(tempInput);
+
+            // Show toast notification
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
